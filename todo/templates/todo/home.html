@@ -2,13 +2,14 @@
 {% block content %}
 
 <h1>Tareas y Actividades</h1>
+
     <ul>
         {% for tarea in tareas %}
-        <li>{{tarea}}</li>
+        <h5><li>{{tarea}}</li></h5>
         <li>{{status}}</li>
         <button type="button" class="btn btn-outline-danger"><a href="{% url 'eliminar' tarea.id %}">Eliminar</a></button>
 
-        <button type="button" class="btn btn-warning"><a href ="{%url 'editar' tarea.id%}">Editar Tarea</a></button>
+        <button type="button" class="btn btn-outline-warning"><a href ="{%url 'editar' tarea.id%}">Editar Tarea</a></button>
         {% endfor %}
     </ul>
 
@@ -20,6 +21,6 @@
         <button type="button" class="btn btn-warning"><a href ="{%url 'editar' actividad.id%}">Editar actividad</a></button>
         {% endfor %}
     </ul>
-    
+
 {% endblock %}
 
